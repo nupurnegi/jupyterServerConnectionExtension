@@ -12,7 +12,7 @@ function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "jupyterserver" is now active!');
+	//console.log('Congratulations, your extension "jupyterserver" is now active!');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
@@ -39,7 +39,7 @@ function activate(context) {
 			//console.log(process.env.CHE_WORKSPACE_NAMESPACE)
 			const { exec} = require('child_process');
 			const a = `curl -X POST -H "Authorization: token ${json["token"]}" "http://169.60.204.172/hub/api/users/${process.env.CHE_WORKSPACE_NAMESPACE}/server"`
-			console.log(a);
+			//console.log(a);
 			exec(`${a}`, (error, stdout, stderr) => {
 			  if (error) {
 				  console.log(`error: ${error.message}`);
